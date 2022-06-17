@@ -20,11 +20,18 @@ public class GuessGame {
         System.out.print("Guess Number: ");
         int input = sc.nextInt();
 
-        if (!hasTried()) {
+        if (!hasTried(input)) {
             if (input < this.secretCode) {
                 System.out.println("Guess too low");
-        }else if()
+        }else if(input > this.secretCode){
+                System.out.println("Guess too high");
+            }else{
+                System.out.println("Correct!");
+            }
         }
+    }
+    private boolean hasTried(Integer n){
+        return this.trials.contains(n);
     }
 
 }
